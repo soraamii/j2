@@ -80,5 +80,33 @@ public class FileUploader {
 
     return uploadFileNames;
   }
+  
+  public void removeFiles(List<String> fileNames) {
+      
+    if(fileNames == null || fileNames.size() == 0) {
+      
+      return;
+      
+    }
+    
+    for(String fname : fileNames) {
+      
+      // 원본 파일
+      File original = new File(path, fname);
+      File thumb = new File(path, "s_"+fname);
+      
+      // thumbnail 파일이 있다면 삭제
+      if(thumb.exists()) {
+        
+        thumb.delete();
+      }
+      
+      original.delete();
+      
+      
+      
+    }
+    
+  }
 
 }

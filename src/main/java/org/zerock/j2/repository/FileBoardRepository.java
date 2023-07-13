@@ -9,7 +9,7 @@ import org.zerock.j2.repository.search.FileBoardSearch;
 
 public interface FileBoardRepository extends JpaRepository<FileBoard, Long>, FileBoardSearch {
   
-  @EntityGraph(attributePaths = {"images"}) // 한 번데 가져오고 싶음
+  @EntityGraph(attributePaths = {"images"}) // 한 번에 가져오고 싶음
   @Query("select b from FileBoard b where b.bno = :bno")
   FileBoard selectOne(@Param("bno")Long bno);
 

@@ -35,6 +35,9 @@ public class Product {
   private String writer;
 
   private int price;
+  
+  // 삭제 플래그
+  private boolean delFlag;
 
   @ElementCollection(fetch = FetchType.LAZY)
   @Builder.Default
@@ -58,5 +61,23 @@ public class Product {
 
     this.price = price;
     
+  }
+
+  public void changePname(String pname) {
+
+    this.pname = pname;
+
+  }
+
+  public void changePdesc(String pdesc) {
+
+    this.pdesc = pdesc;
+
+  }
+
+  public void changeDel(boolean delFlag) {
+
+    this.delFlag = delFlag;
+
   }
 }

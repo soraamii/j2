@@ -72,6 +72,7 @@ public class ProductSearchImpl extends QuerydslRepositorySupport implements Prod
 
 
     query.where(productImage.ord.eq(0));
+    query.where(product.delFlag.eq(Boolean.FALSE));
 
     int PageNum = pageRequestDTO.getPage() <= 0 ? 0 : pageRequestDTO.getPage() -1;
 
